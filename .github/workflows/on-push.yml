@@ -1,0 +1,11 @@
+name: on-push
+on:
+  push:
+    branches:
+      - "main"
+      - "foo-branch"
+jobs:
+  on-push:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo This job runs on push to main branch

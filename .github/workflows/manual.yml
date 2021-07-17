@@ -1,0 +1,13 @@
+name: manual
+on:
+  workflow_dispatch:
+    input:
+      name:
+        description: "The name to echo"
+        required: false
+        default: 'World'
+jobs:
+  manual:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "${{ env.INPUT_NAME }}"

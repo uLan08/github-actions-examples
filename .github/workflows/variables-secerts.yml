@@ -1,0 +1,14 @@
+name: variables-secrets
+on:
+  push:
+    branches:
+      - "main"
+jobs:
+  variables-secrets:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Retrieve secret
+        env:
+          example_api_key: ${{ secrets.EXAMPLE_API_KEY }}
+          foo_variable: "BAZ"
+        run: echo "$example_api_key $foo_variable"

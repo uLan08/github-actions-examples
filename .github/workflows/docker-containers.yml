@@ -1,0 +1,13 @@
+name: docker-containers
+on:
+  push:
+    branches:
+      - "main"
+jobs:
+  setup-node:
+    runs-on: ubuntu-latest
+    container: node:16
+    steps:
+      - uses: actions/checkout@v2
+      - run: npm -v
+      - run: node -v

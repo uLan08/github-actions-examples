@@ -10,4 +10,4 @@ jobs:
   manual:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "${{ env.INPUT_NAME }}"
+      - run: echo "${{ INPUT_NAME }}"

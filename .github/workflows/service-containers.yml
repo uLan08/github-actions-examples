@@ -15,7 +15,7 @@ jobs:
       postgres:
         image: postgres
         env:
-          POSTGRES_DATABASE: ${{ env.DATABASE_NAME }}
+          POSTGRES_DB: ${{ env.DATABASE_NAME }}
           POSTGRES_USER: ${{ env.DATABASE_USER }}
     steps:
       - name: Install psql client

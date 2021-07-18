@@ -7,7 +7,7 @@ jobs:
    steps:
      - run: echo "Regular job"   
  special_job:
-   if: ${{ github.ref == 'refs/heads/main' }}
+   if: contains( github.ref, 'main')
    runs-on: ubuntu-latest
    steps:
      - run: echo "Special job"

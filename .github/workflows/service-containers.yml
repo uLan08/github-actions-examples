@@ -12,7 +12,7 @@ jobs:
       DATABASE_NAME: my-database
       DATABASE_USER: foo-user
     services:
-      postgres-db:
+      postgres:
         image: postgres
         env:
           POSTGRES_DATABASE: ${{ env.DATABASE_NAME }}
@@ -21,4 +21,4 @@ jobs:
       - name: Install psql client
         run: apt-get -y update && apt-get -y install postgresql-client
       - name: Connect to PostgreSQL
-        run: psql -U ${{ env.DATABASE_USER }} -d ${{ env.DATABASE_NAME }} -h postgres-db -c 'select * from information_schema.tables;'
+        run: psql -U ${{ env.DATABASE_USER }} -d ${{ env.DATABASE_NAME }} -h postgres -c 'select * from information_schema.tables;'

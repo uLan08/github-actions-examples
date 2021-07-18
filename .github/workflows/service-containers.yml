@@ -9,8 +9,8 @@ jobs:
     container:
       image: ubuntu
     env:
-      DATABASE_NAME: my-database
-      DATABASE_USER: foo-user
+      DATABASE_NAME: my_database
+      DATABASE_USER: foo_user
     services:
       postgres:
         image: postgres

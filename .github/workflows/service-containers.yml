@@ -7,7 +7,7 @@ jobs:
   container-job:
     runs-on: ubuntu-latest
     container:
-      image: ubuntu
+      image: node
     env:
       DATABASE_NAME: my_database
       DATABASE_USER: foo_user
@@ -21,6 +21,6 @@ jobs:
       - name: Install psql client
         run: apt-get -y update && apt-get -y install postgresql-client dnsutils
       - name: Run dns utils
-        run: nslookup postgres && dig postgres
+        run: dig postgres
       - name: Connect to PostgreSQL
         run: psql -U ${{ env.DATABASE_USER }} -d ${{ env.DATABASE_NAME }} -h postgres -c 'select * from information_schema.tables;'

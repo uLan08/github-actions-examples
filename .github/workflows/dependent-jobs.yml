@@ -21,8 +21,14 @@ jobs:
     steps:
       - run: echo "This job will run after build_a and build_b have finished"
 
-  deploy_ab:
+  independent_test:
     if: always()
+    runs-on: ubuntu-latest
+    needs: [build_a,build_b]
+    steps:
+      - run: echo "This job will run regardless of the status of build_a and build_b"
+
+  deploy_ab:
     runs-on: ubuntu-latest
     needs: [test_ab]
     steps:

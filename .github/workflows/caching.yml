@@ -17,7 +17,7 @@ jobs:
         path: ./cache-files
         key: cache-files-${{ hashFiles('./cache-files/*') }}
         restore-keys: cache-files-
-    - run: echo "Cache was not hit"
+    - run: echo "Cache was not hit "
       if: ${{ steps.cache-step.outputs.cache-hit != 'true' }}
     - run: echo "Cache was hit"
       if: ${{ steps.cache-step.outputs.cache-hit == 'true' }}

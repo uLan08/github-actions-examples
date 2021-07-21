@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/uLan08/github-actions-examples#readme",
   "dependencies": {
-    "express": "^4.17.1",
-    "striptags": "^3.1.1"
+    "express": "^4.17.1"
   }
 }
